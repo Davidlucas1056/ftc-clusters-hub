@@ -1,0 +1,89 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import TeamMemberCard from "@/components/TeamMemberCard";
+
+const teamMembers = [
+  { name: "Membro 1", role: "Capitão" },
+  { name: "Membro 2", role: "Co-Capitão" },
+  { name: "Membro 3", role: "Programador" },
+  { name: "Membro 4", role: "Engenheiro Mecânico" },
+  { name: "Membro 5", role: "Designer" },
+  { name: "Membro 6", role: "Marketing" },
+  { name: "Membro 7", role: "Documentação" },
+  { name: "Membro 8", role: "Outreach" },
+];
+
+const mentors = [
+  { name: "Mentor 1", role: "Mentor Técnico" },
+  { name: "Mentor 2", role: "Mentor de Gestão" },
+];
+
+const NossaEquipe = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+
+      <HeroSection
+        title="Nossa Equipe"
+        subtitle="Conheça as pessoas incríveis que fazem a Clusters acontecer"
+      />
+
+      {/* Team Members Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
+            Membros da Equipe
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <div key={index} className={`animate-fade-in-up stagger-${(index % 6) + 1}`}>
+                <TeamMemberCard name={member.name} role={member.role} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mentors Section */}
+      <section className="py-20 hero-section">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
+            Nossos Mentores
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {mentors.map((mentor, index) => (
+              <div key={index} className="animate-fade-in-up">
+                <TeamMemberCard name={mentor.name} role={mentor.role} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join Us CTA */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-glow">
+            Quer fazer parte da equipe?
+          </h2>
+          <p className="text-foreground/70 mb-8 max-w-2xl mx-auto">
+            Estamos sempre em busca de pessoas apaixonadas por tecnologia, 
+            inovação e trabalho em equipe. Se você tem interesse em robótica 
+            e quer fazer a diferença, entre em contato conosco!
+          </p>
+          <a
+            href="mailto:contato@clusters16053.com"
+            className="btn-primary"
+          >
+            Junte-se a Nós
+          </a>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default NossaEquipe;
