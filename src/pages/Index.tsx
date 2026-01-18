@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Cog, Users, Trophy, Heart, ArrowRight } from "lucide-react";
+import { Users, Trophy, Heart, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import logoImg from "@/assets/logo-clusters.png";
+import teamPhoto from "@/assets/team-photo.jpeg";
 
 const Index = () => {
   return (
@@ -11,6 +13,14 @@ const Index = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center relative pt-20">
         <div className="container mx-auto px-4 text-center">
+          <div className="animate-fade-in-up">
+            <img 
+              src={logoImg} 
+              alt="Clusters 16053 Logo" 
+              className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 object-contain"
+            />
+          </div>
+          
           <div className="animate-fade-in-up">
             <span className="inline-block px-4 py-2 rounded-full glass text-sm font-medium mb-6">
               FIRST Tech Challenge • Team 16053
@@ -40,15 +50,23 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Animated robot icon */}
-        <div className="absolute bottom-32 animate-float">
-          <Cog size={60} className="text-foreground/20" />
-        </div>
-
         {/* Scroll indicator */}
         <div className="absolute bottom-8 animate-bounce">
           <div className="w-6 h-10 rounded-full border-2 border-foreground/30 flex justify-center pt-2">
             <div className="w-1 h-3 bg-foreground/50 rounded-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* Team Photo Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={teamPhoto} 
+              alt="Equipe Clusters 16053" 
+              className="w-full rounded-2xl shadow-2xl border-2 border-foreground/10"
+            />
           </div>
         </div>
       </section>
