@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AchievementCard from "@/components/AchievementCard";
 import { Trophy, Award, Medal, Star } from "lucide-react";
+import teamControlImg from "@/assets/team-control.jpeg";
+import teamTrophiesImg from "@/assets/team-trophies.jpeg";
 
 const achievements = [
   {
@@ -83,6 +85,39 @@ const Conquistas = () => {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
+            Momentos de Vitória
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
+              <img 
+                src={teamControlImg} 
+                alt="Equipe Clusters recebendo prêmio de Controle" 
+                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 card-gradient">
+                <h3 className="font-bold text-lg">Prêmio Controle</h3>
+                <p className="text-foreground/70 text-sm">Máquina, Criatividade e Inovação</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
+              <img 
+                src={teamTrophiesImg} 
+                alt="Equipe Clusters com troféus" 
+                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 card-gradient">
+                <h3 className="font-bold text-lg">Campeões Regionais</h3>
+                <p className="text-foreground/70 text-sm">Celebrando mais uma conquista</p>
+              </div>
             </div>
           </div>
         </div>

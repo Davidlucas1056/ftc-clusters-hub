@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import teamPhotoImg from "@/assets/team-photo.jpeg";
 
 const teamMembers = [
   { name: "Membro 1", role: "Capitão" },
@@ -28,6 +29,19 @@ const NossaEquipe = () => {
         title="Nossa Equipe"
         subtitle="Conheça as pessoas incríveis que fazem a Clusters acontecer"
       />
+
+      {/* Team Photo */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
+            <img 
+              src={teamPhotoImg} 
+              alt="Equipe Clusters 16053" 
+              className="w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Team Members Section */}
       <section className="py-20">
