@@ -1,52 +1,64 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import { Heart, Star, Gem, Crown, Mail } from "lucide-react";
+import { Crown, Gem, Star, Wrench, Mail } from "lucide-react";
 
 const sponsorTiers = [
   {
-    name: "Bronze",
-    icon: <Heart className="text-orange-400" size={32} />,
-    benefits: [
-      "Logo no site da equipe",
-      "Menção nas redes sociais",
-      "Certificado de agradecimento",
-    ],
-    color: "from-orange-600/20 to-orange-400/10",
-  },
-  {
-    name: "Prata",
-    icon: <Star className="text-gray-300" size={32} />,
-    benefits: [
-      "Todos os benefícios Bronze",
-      "Logo no uniforme da equipe",
-      "Logo no robô",
-      "Visita à equipe",
-    ],
-    color: "from-gray-400/20 to-gray-300/10",
-  },
-  {
-    name: "Ouro",
-    icon: <Gem className="text-yellow-400" size={32} />,
-    benefits: [
-      "Todos os benefícios Prata",
-      "Destaque nas apresentações",
-      "Participação em eventos",
-      "Relatório de atividades",
-    ],
-    color: "from-yellow-500/20 to-yellow-400/10",
-  },
-  {
-    name: "Diamante",
+    name: "Platinum",
+    price: "+R$1500",
     icon: <Crown className="text-cyan-300" size={32} />,
     benefits: [
-      "Todos os benefícios Ouro",
-      "Nome no título da equipe",
-      "Presença VIP em competições",
-      "Conteúdo exclusivo",
-      "Parceria prioritária",
+      "Robô",
+      "Eventos",
+      "Banner",
+      "Ações",
+      "Portifólio",
+      "Destaque no Uniforme",
+      "Instagram Completo (Feed, Stories e Destaques)",
+      "Estande no Campeonato",
     ],
-    color: "from-cyan-400/20 to-cyan-300/10",
+    color: "from-cyan-400/30 to-cyan-300/10",
+    borderColor: "border-cyan-400/50",
+  },
+  {
+    name: "Gold",
+    price: "R$600 – R$1400",
+    icon: <Gem className="text-yellow-400" size={32} />,
+    benefits: [
+      "Portifólio",
+      "Estande no Campeonato",
+      "Eventos",
+      "Ações",
+      "Banner",
+    ],
+    color: "from-yellow-500/30 to-yellow-400/10",
+    borderColor: "border-yellow-400/50",
+  },
+  {
+    name: "Silver",
+    price: "R$100 – R$500",
+    icon: <Star className="text-gray-300" size={32} />,
+    benefits: [
+      "Portifólio",
+      "Instagram Parcial (Post e Stories)",
+    ],
+    color: "from-gray-400/30 to-gray-300/10",
+    borderColor: "border-gray-400/50",
+  },
+  {
+    name: "Steam",
+    price: "Materiais e Serviços",
+    icon: <Wrench className="text-cluster-pink" size={32} />,
+    benefits: [
+      "Banner",
+      "Destaque no Uniforme",
+      "Instagram Completo (Feed, Stories e Destaques)",
+      "Ações",
+      "Portifólio",
+    ],
+    color: "from-cluster-pink/30 to-cluster-blue/10",
+    borderColor: "border-cluster-pink/50",
   },
 ];
 
@@ -65,30 +77,30 @@ const Patrocinio = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-glow title-underline">
-              Por que nos apoiar?
+              Planos de Patrocínio
             </h2>
             <p className="text-foreground/80 text-lg leading-relaxed">
-              Ao patrocinar a equipe 16053 Clusters, você investe no futuro da 
-              educação e tecnologia. Seu apoio nos ajuda a competir, aprender e 
-              inspirar outras pessoas a seguirem carreiras em STEM.
+              Você será divulgado em diversos canais e eventos. Escolha o plano 
+              que melhor se adequa às suas possibilidades e faça parte da nossa história!
             </p>
           </div>
 
           {/* Sponsor Tiers */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {sponsorTiers.map((tier, index) => (
               <div
                 key={tier.name}
-                className={`card-gradient rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-glow animate-fade-in-up stagger-${index + 1}`}
+                className={`card-gradient rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-glow animate-fade-in-up stagger-${index + 1} border-2 ${tier.borderColor}`}
               >
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${tier.color} flex items-center justify-center`}>
                   {tier.icon}
                 </div>
-                <h3 className="text-xl font-bold text-center mb-4">{tier.name}</h3>
-                <ul className="space-y-2">
+                <h3 className="text-2xl font-bold text-center mb-2">{tier.name}</h3>
+                <p className="text-center text-primary font-semibold mb-6">{tier.price}</p>
+                <ul className="space-y-3">
                   {tier.benefits.map((benefit, i) => (
-                    <li key={i} className="text-foreground/70 text-sm flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
+                    <li key={i} className="text-foreground/80 text-sm flex items-start gap-2">
+                      <span className="text-primary mt-0.5">•</span>
                       {benefit}
                     </li>
                   ))}

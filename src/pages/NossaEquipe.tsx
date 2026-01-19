@@ -1,24 +1,64 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import TeamMemberCard from "@/components/TeamMemberCard";
 import teamPhotoImg from "@/assets/team-photo.jpeg";
+import memberPedro from "@/assets/member-pedro.png";
+import memberDavid from "@/assets/member-david.png";
+import memberArthur from "@/assets/member-arthur.png";
+import memberVitoria from "@/assets/member-vitoria.png";
+import memberHarrison from "@/assets/member-harrison.png";
 
-const teamMembers = [
-  { name: "Membro 1", role: "Capitão" },
-  { name: "Membro 2", role: "Co-Capitão" },
-  { name: "Membro 3", role: "Programador" },
-  { name: "Membro 4", role: "Engenheiro Mecânico" },
-  { name: "Membro 5", role: "Designer" },
-  { name: "Membro 6", role: "Marketing" },
-  { name: "Membro 7", role: "Documentação" },
-  { name: "Membro 8", role: "Outreach" },
+interface TeamMember {
+  name: string;
+  role: string;
+  imageUrl?: string;
+}
+
+const teamMembers: TeamMember[] = [
+  { name: "Pedro Iago", role: "Capitão", imageUrl: memberPedro },
+  { name: "David", role: "Programador", imageUrl: memberDavid },
+  { name: "Arthur", role: "Engenheiro Mecânico", imageUrl: memberArthur },
+  { name: "Vitória", role: "Designer", imageUrl: memberVitoria },
+  { name: "Harrison", role: "Marketing", imageUrl: memberHarrison },
 ];
 
-const mentors = [
+const mentors: TeamMember[] = [
   { name: "Mentor 1", role: "Mentor Técnico" },
   { name: "Mentor 2", role: "Mentor de Gestão" },
 ];
+
+const TeamMemberCardHover = ({ name, role, imageUrl }: TeamMember) => {
+  return (
+    <div className="group relative card-gradient rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow">
+      {/* Image Container */}
+      <div className="aspect-[3/4] overflow-hidden">
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={name}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-cluster-blue to-cluster-pink flex items-center justify-center">
+            <span className="text-4xl font-bold">{name.charAt(0)}</span>
+          </div>
+        )}
+      </div>
+      
+      {/* Role - always visible */}
+      <div className="p-4 text-center">
+        <p className="text-foreground/70 text-sm">{role}</p>
+      </div>
+      
+      {/* Name overlay - visible on hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <h3 className="font-bold text-2xl text-white text-center px-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          {name}
+        </h3>
+      </div>
+    </div>
+  );
+};
 
 const NossaEquipe = () => {
   return (
@@ -49,10 +89,10 @@ const NossaEquipe = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
             Membros da Equipe
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {teamMembers.map((member, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${(index % 6) + 1}`}>
-                <TeamMemberCard name={member.name} role={member.role} />
+                <TeamMemberCardHover name={member.name} role={member.role} imageUrl={member.imageUrl} />
               </div>
             ))}
           </div>
@@ -68,7 +108,7 @@ const NossaEquipe = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {mentors.map((mentor, index) => (
               <div key={index} className="animate-fade-in-up">
-                <TeamMemberCard name={mentor.name} role={mentor.role} />
+                <TeamMemberCardHover name={mentor.name} role={mentor.role} />
               </div>
             ))}
           </div>

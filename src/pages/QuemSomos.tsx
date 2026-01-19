@@ -17,6 +17,23 @@ const QuemSomos = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            {/* Sobre a Clusters */}
+            <div className="card-gradient rounded-2xl p-8 md:p-12 mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-glow">
+                Sobre a Clusters 16053
+              </h2>
+              <p className="text-foreground/80 leading-relaxed">
+                A Cluster 16053 é uma equipe inspirada pela robótica e movida pela paixão 
+                por aprender, criar e inovar. Praticamos ativamente o método STEM, integrando 
+                ciência, tecnologia, engenharia e matemática no desenvolvimento de soluções 
+                técnicas e no crescimento pessoal de cada membro. Mais do que competir, 
+                acreditamos nos valores da FIRST e colocamos em prática o Gracious Professionalism®, 
+                trabalhando com respeito, colaboração e ética, dentro e fora da arena, sempre 
+                buscando evoluir como equipe e impactar positivamente nossa comunidade.
+              </p>
+            </div>
+
+            {/* O que é a FTC */}
             <div className="card-gradient rounded-2xl p-8 md:p-12 mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-glow">
                 O que é a FTC?
