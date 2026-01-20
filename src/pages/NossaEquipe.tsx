@@ -22,9 +22,14 @@ const teamMembers: TeamMember[] = [
   { name: "Harrison", role: "Marketing", imageUrl: memberHarrison },
 ];
 
+import mentorJocelio from "@/assets/mentor-jocelio.png";
+import mentorWelligton from "@/assets/mentor-welligton.png";
+import mentorPaixao from "@/assets/mentor-paixao.png";
+
 const mentors: TeamMember[] = [
-  { name: "Mentor 1", role: "Mentor Técnico" },
-  { name: "Mentor 2", role: "Mentor de Gestão" },
+  { name: "Jocélio", role: "Técnico", imageUrl: mentorJocelio },
+  { name: "Welligton", role: "Mentor", imageUrl: mentorWelligton },
+  { name: "Paixão", role: "Mentor", imageUrl: mentorPaixao },
 ];
 
 const TeamMemberCardHover = ({ name, role, imageUrl }: TeamMember) => {
@@ -73,7 +78,7 @@ const NossaEquipe = () => {
       {/* Team Photo */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
+          <div className="max-w-2xl mx-auto overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
             <img 
               src={teamPhotoImg} 
               alt="Equipe Clusters 16053" 
@@ -105,7 +110,7 @@ const NossaEquipe = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
             Nossos Mentores
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {mentors.map((mentor, index) => (
               <div key={index} className="animate-fade-in-up">
                 <TeamMemberCardHover name={mentor.name} role={mentor.role} />

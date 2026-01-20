@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import { Target, Lightbulb, Users, Rocket } from "lucide-react";
+import teamRegional from "@/assets/team-regional.jpeg";
 
 const QuemSomos = () => {
   return (
@@ -31,6 +32,13 @@ const QuemSomos = () => {
                 trabalhando com respeito, colaboração e ética, dentro e fora da arena, sempre 
                 buscando evoluir como equipe e impactar positivamente nossa comunidade.
               </p>
+              <div className="mt-6 max-w-xs mx-auto">
+                <img 
+                  src={teamRegional} 
+                  alt="Equipe Clusters no Regional 2025" 
+                  className="w-full rounded-xl border-2 border-foreground/10"
+                />
+              </div>
             </div>
 
             {/* O que é a FTC */}
