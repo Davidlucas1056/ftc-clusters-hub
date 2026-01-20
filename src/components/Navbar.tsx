@@ -47,14 +47,14 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center gap-6">
+          <ul className="hidden lg:flex items-center gap-4">
             {navLinks.map((link) => (
-              <li key={link.path}>
+              <li key={link.path} className="flex items-center">
                 <Link
                   to={link.path}
-                  className={`text-sm font-semibold uppercase tracking-wider transition-all duration-300 hover:opacity-100 ${
+                  className={`text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:opacity-100 whitespace-nowrap px-2 py-1 ${
                     location.pathname === link.path
-                      ? "opacity-100 border-b-2 border-foreground pb-1"
+                      ? "opacity-100 border-b-2 border-foreground"
                       : "opacity-70"
                   }`}
                 >

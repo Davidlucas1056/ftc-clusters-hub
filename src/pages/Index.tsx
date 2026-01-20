@@ -97,7 +97,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Conquistas</h3>
               <p className="text-foreground/70">
-                Nossos prêmios e reconhecimentos ao longo da jornada
+                6 participações em campeonatos nacionais
               </p>
             </Link>
 
