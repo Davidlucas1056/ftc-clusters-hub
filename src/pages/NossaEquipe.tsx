@@ -113,7 +113,7 @@ const NossaEquipe = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {mentors.map((mentor, index) => (
               <div key={index} className="animate-fade-in-up">
-                <TeamMemberCardHover name={mentor.name} role={mentor.role} />
+                <TeamMemberCardHover name={mentor.name} role={mentor.role} imageUrl={mentor.imageUrl} />
               </div>
             ))}
           </div>

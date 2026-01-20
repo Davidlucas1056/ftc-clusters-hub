@@ -50,7 +50,7 @@ const Conquistas = () => {
               <p className="text-foreground/70 text-sm">Prêmios</p>
             </div>
             <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-cluster-pink mb-2">2</div>
+              <div className="text-4xl md:text-5xl font-bold text-cluster-pink mb-2">6</div>
               <p className="text-foreground/70 text-sm">Nacionais</p>
             </div>
             <div className="card-gradient rounded-xl p-6 text-center">
