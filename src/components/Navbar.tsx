@@ -6,6 +6,7 @@ import logoImg from "@/assets/logo-clusters.png";
 const navLinks = [
   { name: "Início", path: "/" },
   { name: "Quem Somos", path: "/quem-somos" },
+  { name: "Nossos Projetos", path: "/nossos-projetos" },
   { name: "Patrocínio", path: "/patrocinio" },
   { name: "Nossa História", path: "/nossa-historia" },
   { name: "Conquistas", path: "/conquistas" },
