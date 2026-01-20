@@ -2,34 +2,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AchievementCard from "@/components/AchievementCard";
-import { Trophy, Award, Medal, Star } from "lucide-react";
-import teamControlImg from "@/assets/team-control.jpeg";
+import { Trophy, Award, Medal } from "lucide-react";
+import controlAwardImg from "@/assets/control-award.jpeg";
 import teamTrophiesImg from "@/assets/team-trophies.jpeg";
 
 const achievements = [
   {
-    title: "Prêmio Inspire",
-    description: "Reconhecimento por demonstrar os valores e princípios do FIRST Tech Challenge em todas as áreas.",
-    year: "2024",
+    title: "Prêmio Motivate",
+    description: "Reconhecimento no Campeonato Nacional por inspirar e motivar outras equipes com nossa paixão pela robótica.",
+    year: "2021 - Nacional",
     icon: <Trophy className="text-yellow-400" size={24} />,
   },
   {
-    title: "Prêmio Think",
-    description: "Destaque pela excelência no design e engenharia do nosso robô, documentado em nosso Engineering Portfolio.",
-    year: "2024",
-    icon: <Star className="text-primary" size={24} />,
-  },
-  {
-    title: "Prêmio Connect",
-    description: "Reconhecimento pelo trabalho de divulgação STEM e conexão com a comunidade local.",
-    year: "2023",
-    icon: <Award className="text-accent" size={24} />,
-  },
-  {
-    title: "Finalistas Regional",
-    description: "Classificação para as finais da competição regional, competindo entre as melhores equipes.",
-    year: "2023",
+    title: "Aliança Vencedora",
+    description: "Conquistamos o primeiro lugar na aliança vencedora do Regional, demonstrando excelência em trabalho em equipe e estratégia.",
+    year: "2025 - Regional",
     icon: <Medal className="text-cluster-pink" size={24} />,
+  },
+  {
+    title: "Control Award",
+    description: "Prêmio que reconhece a equipe com o melhor sistema de controle e automação do robô, destacando nossa excelência técnica em programação.",
+    year: "2025 - Regional",
+    icon: <Award className="text-accent" size={24} />,
   },
 ];
 
@@ -48,16 +42,16 @@ const Conquistas = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">2+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">7+</div>
               <p className="text-foreground/70 text-sm">Temporadas</p>
             </div>
             <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">4+</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">3</div>
               <p className="text-foreground/70 text-sm">Prêmios</p>
             </div>
             <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-cluster-pink mb-2">10+</div>
-              <p className="text-foreground/70 text-sm">Competições</p>
+              <div className="text-4xl md:text-5xl font-bold text-cluster-pink mb-2">2</div>
+              <p className="text-foreground/70 text-sm">Nacionais</p>
             </div>
             <div className="card-gradient rounded-xl p-6 text-center">
               <div className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-2">∞</div>
@@ -96,18 +90,7 @@ const Conquistas = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
             Momentos de Vitória
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
-              <img 
-                src={teamControlImg} 
-                alt="Equipe Clusters recebendo prêmio de Controle" 
-                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div className="p-4 card-gradient">
-                <h3 className="font-bold text-lg">Prêmio Controle</h3>
-                <p className="text-foreground/70 text-sm">Máquina, Criatividade e Inovação</p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
             <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
               <img 
                 src={teamTrophiesImg} 
@@ -115,8 +98,19 @@ const Conquistas = () => {
                 className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
               />
               <div className="p-4 card-gradient">
-                <h3 className="font-bold text-lg">Campeões Regionais</h3>
-                <p className="text-foreground/70 text-sm">Celebrando mais uma conquista</p>
+                <h3 className="font-bold text-lg">Aliança Vencedora 2025</h3>
+                <p className="text-foreground/70 text-sm">Celebrando nossa conquista no Regional</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow max-w-sm mx-auto">
+              <img 
+                src={controlAwardImg} 
+                alt="Equipe Clusters recebendo Control Award" 
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 card-gradient">
+                <h3 className="font-bold text-lg">Control Award 2025</h3>
+                <p className="text-foreground/70 text-sm">Máquina, Criatividade e Inovação</p>
               </div>
             </div>
           </div>

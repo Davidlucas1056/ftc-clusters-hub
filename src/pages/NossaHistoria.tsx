@@ -5,27 +5,27 @@ import { Calendar, Flag, Rocket, Star } from "lucide-react";
 
 const timelineEvents = [
   {
-    year: "2023",
-    title: "O Início",
-    description: "A equipe 16053 Clusters foi fundada por um grupo de estudantes apaixonados por robótica e tecnologia.",
+    year: "2018",
+    title: "A Fundação - Tech Guears",
+    description: "Nossa equipe foi fundada em 2018 com o nome Tech Guears, um grupo de estudantes apaixonados por robótica que deram os primeiros passos na FIRST Tech Challenge.",
     icon: <Flag className="text-primary" size={24} />,
   },
   {
-    year: "2023",
-    title: "Primeira Temporada",
-    description: "Participamos da nossa primeira temporada da FTC, aprendendo muito sobre design, programação e trabalho em equipe.",
+    year: "2020",
+    title: "Nova Identidade - Clusters",
+    description: "Passamos por uma grande transformação, mudando nosso nome e identidade visual para Clusters 16053, refletindo nossa evolução e união como equipe.",
     icon: <Rocket className="text-accent" size={24} />,
   },
   {
-    year: "2024",
-    title: "Crescimento",
-    description: "Expandimos nossa equipe e aprimoramos nossas habilidades técnicas, alcançando resultados cada vez melhores.",
+    year: "2021",
+    title: "Nacional - Prêmio Motivate",
+    description: "Conquistamos o Prêmio Motivate no Campeonato Nacional da FTC, um reconhecimento pela nossa capacidade de inspirar e motivar outras equipes.",
     icon: <Star className="text-cluster-pink" size={24} />,
   },
   {
-    year: "2024",
-    title: "Novos Horizontes",
-    description: "Continuamos evoluindo e buscando novas conquistas, sempre mantendo nossos valores e paixão pela robótica.",
+    year: "2025",
+    title: "Regional - Dupla Conquista",
+    description: "No Regional de 2025, alcançamos um desempenho excepcional, conquistando o Aliança Vencedora e o prestigiado Control Award, reconhecendo nossa excelência em controle e automação.",
     icon: <Calendar className="text-secondary-foreground" size={24} />,
   },
 ];
