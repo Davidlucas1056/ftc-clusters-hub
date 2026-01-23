@@ -15,11 +15,11 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Pedro Iago", role: "Capitão", imageUrl: memberPedro },
+  { name: "Pedro Iago", role: "Engenheiro", imageUrl: memberPedro },
   { name: "David", role: "Programador", imageUrl: memberDavid },
   { name: "Arthur", role: "Engenheiro Mecânico", imageUrl: memberArthur },
   { name: "Vitória", role: "Designer", imageUrl: memberVitoria },
-  { name: "Harrison", role: "Marketing", imageUrl: memberHarrison },
+  { name: "Harrison", role: "Programador", imageUrl: memberHarrison },
 ];
 
 import mentorJocelio from "@/assets/mentor-jocelio.png";

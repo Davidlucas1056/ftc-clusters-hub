@@ -140,7 +140,7 @@ const Patrocinio = () => {
             parceria e como você pode fazer a diferença.
           </p>
           <a
-            href="mailto:contato@clusters16053.com"
+            href="mailto:clusters16053@gmail.com"
             className="btn-primary inline-flex items-center gap-2"
           >
             <Mail size={18} />

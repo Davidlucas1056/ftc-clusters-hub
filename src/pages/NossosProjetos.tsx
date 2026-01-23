@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import { Heart, Users, Lightbulb, BookOpen } from "lucide-react";
 import fllMentorshipImg from "@/assets/fll-mentorship.jpeg";
+import harmoniaImg from "@/assets/harmonia-project.jpeg";
 
 const NossosProjetos = () => {
   return (
@@ -26,6 +27,15 @@ const NossosProjetos = () => {
                 </h2>
               </div>
               <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
+            </div>
+
+            {/* Imagem do Projeto Harmonia */}
+            <div className="max-w-2xl mx-auto mb-10 overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
+              <img 
+                src={harmoniaImg} 
+                alt="Projeto Harmonia - Oficina de robótica" 
+                className="w-full object-cover"
+              />
             </div>
 
             <div className="card-gradient rounded-2xl p-8 md:p-12">

@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,21 +14,16 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="#"
+              href="https://www.instagram.com/clusters_ftc?igsh=ZmNpZXBoM2NzY2Vy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-foreground/20 transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={20} />
             </a>
             <a
-              href="#"
-              className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-foreground/20 transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube size={20} />
-            </a>
-            <a
-              href="#"
+              href="mailto:clusters16053@gmail.com"
               className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-foreground/20 transition-colors"
               aria-label="Email"
             >
