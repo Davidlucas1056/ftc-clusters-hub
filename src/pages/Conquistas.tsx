@@ -3,8 +3,13 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AchievementCard from "@/components/AchievementCard";
 import { Trophy, Award, Medal } from "lucide-react";
+import { motion } from "framer-motion";
 import controlAwardImg from "@/assets/control-award.jpeg";
 import teamTrophiesImg from "@/assets/team-trophies.jpeg";
+import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import InteractiveCard from "@/components/InteractiveCard";
+import ParallaxImage from "@/components/ParallaxImage";
 
 const achievements = [
   {
@@ -41,22 +46,33 @@ const Conquistas = () => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">7+</div>
-              <p className="text-foreground/70 text-sm">Temporadas</p>
-            </div>
-            <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">3</div>
-              <p className="text-foreground/70 text-sm">Prêmios</p>
-            </div>
-            <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-cluster-pink mb-2">6</div>
-              <p className="text-foreground/70 text-sm">Nacionais</p>
-            </div>
-            <div className="card-gradient rounded-xl p-6 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-2">∞</div>
-              <p className="text-foreground/70 text-sm">Aprendizados</p>
-            </div>
+            {[
+              { value: 7, suffix: "+", label: "Temporadas", color: "text-primary" },
+              { value: 3, suffix: "", label: "Prêmios", color: "text-accent" },
+              { value: 6, suffix: "", label: "Nacionais", color: "text-cluster-pink" },
+              { value: "∞", suffix: "", label: "Aprendizados", color: "text-secondary-foreground" },
+            ].map((stat, index) => (
+              <AnimatedSection key={stat.label} delay={index * 0.1}>
+                <motion.div 
+                  className="card-gradient rounded-xl p-6 text-center"
+                  whileHover={{ y: -5, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.3)" }}
+                >
+                  <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}>
+                    {typeof stat.value === "number" ? (
+                      <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    ) : (
+                      <motion.span
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    )}
+                  </div>
+                  <p className="text-foreground/70 text-sm">{stat.label}</p>
+                </motion.div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -65,19 +81,26 @@ const Conquistas = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
-              Nossos Prêmios
-            </h2>
+            <AnimatedSection>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline"
+                whileHover={{ scale: 1.02 }}
+              >
+                Nossos Prêmios
+              </motion.h2>
+            </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievements.map((achievement, index) => (
-                <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
-                  <AchievementCard
-                    title={achievement.title}
-                    description={achievement.description}
-                    year={achievement.year}
-                    icon={achievement.icon}
-                  />
-                </div>
+                <AnimatedSection key={index} delay={index * 0.15}>
+                  <InteractiveCard className="h-full">
+                    <AchievementCard
+                      title={achievement.title}
+                      description={achievement.description}
+                      year={achievement.year}
+                      icon={achievement.icon}
+                    />
+                  </InteractiveCard>
+                </AnimatedSection>
               ))}
             </div>
           </div>
@@ -87,32 +110,41 @@ const Conquistas = () => {
       {/* Gallery Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline">
-            Momentos de Vitória
-          </h2>
+          <AnimatedSection>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold mb-12 text-center text-glow title-underline"
+              whileHover={{ scale: 1.02 }}
+            >
+              Momentos de Vitória
+            </motion.h2>
+          </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
-            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow">
-              <img 
-                src={teamTrophiesImg} 
-                alt="Equipe Clusters com troféus" 
-                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div className="p-4 card-gradient">
-                <h3 className="font-bold text-lg">Aliança Vencedora 2025</h3>
-                <p className="text-foreground/70 text-sm">Celebrando nossa conquista no Regional</p>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-2xl border-2 border-foreground/10 shadow-glow max-w-sm mx-auto">
-              <img 
-                src={controlAwardImg} 
-                alt="Equipe Clusters recebendo Control Award" 
-                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div className="p-4 card-gradient">
-                <h3 className="font-bold text-lg">Control Award 2025</h3>
-                <p className="text-foreground/70 text-sm">Máquina, Criatividade e Inovação</p>
-              </div>
-            </div>
+            <AnimatedSection direction="left">
+              <InteractiveCard className="overflow-hidden">
+                <ParallaxImage 
+                  src={teamTrophiesImg} 
+                  alt="Equipe Clusters com troféus" 
+                  className="w-full h-72"
+                />
+                <div className="p-4 card-gradient">
+                  <h3 className="font-bold text-lg">Aliança Vencedora 2025</h3>
+                  <p className="text-foreground/70 text-sm">Celebrando nossa conquista no Regional</p>
+                </div>
+              </InteractiveCard>
+            </AnimatedSection>
+            <AnimatedSection direction="right">
+              <InteractiveCard className="overflow-hidden max-w-sm mx-auto">
+                <ParallaxImage 
+                  src={controlAwardImg} 
+                  alt="Equipe Clusters recebendo Control Award" 
+                  className="w-full h-48"
+                />
+                <div className="p-4 card-gradient">
+                  <h3 className="font-bold text-lg">Control Award 2025</h3>
+                  <p className="text-foreground/70 text-sm">Máquina, Criatividade e Inovação</p>
+                </div>
+              </InteractiveCard>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -120,15 +152,25 @@ const Conquistas = () => {
       {/* Quote Section */}
       <section className="py-20 hero-section">
         <div className="container mx-auto px-4 text-center">
-          <blockquote className="max-w-3xl mx-auto">
-            <p className="text-2xl md:text-3xl italic text-foreground/90 mb-6">
-              "Não são os prêmios que nos definem, mas sim o caminho que 
-              percorremos para conquistá-los."
-            </p>
-            <footer className="text-foreground/60">
-              — Equipe 16053 Clusters
-            </footer>
-          </blockquote>
+          <AnimatedSection>
+            <motion.blockquote 
+              className="max-w-3xl mx-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.p 
+                className="text-2xl md:text-3xl italic text-foreground/90 mb-6"
+                whileHover={{ scale: 1.02 }}
+              >
+                "Não são os prêmios que nos definem, mas sim o caminho que 
+                percorremos para conquistá-los."
+              </motion.p>
+              <footer className="text-foreground/60">
+                — Equipe 16053 Clusters
+              </footer>
+            </motion.blockquote>
+          </AnimatedSection>
         </div>
       </section>
 

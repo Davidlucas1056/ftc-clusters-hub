@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 interface HeroSectionProps {
@@ -10,20 +11,47 @@ const HeroSection = ({ title, subtitle, showScrollIndicator = false }: HeroSecti
   return (
     <section className="min-h-[60vh] flex flex-col items-center justify-center relative hero-section">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-glow title-underline animate-fade-in-up">
-          {title}
-        </h1>
+        <motion.h1 
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-glow title-underline"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {title.split("").map((char, index) => (
+            <motion.span
+              key={index}
+              className="inline-block"
+              whileHover={{ 
+                scale: 1.2, 
+                color: "hsl(var(--primary))",
+                textShadow: "0 0 30px hsl(var(--primary))"
+              }}
+              transition={{ type: "spring", stiffness: 500 }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+          ))}
+        </motion.h1>
         {subtitle && (
-          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <motion.p 
+            className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             {subtitle}
-          </p>
+          </motion.p>
         )}
       </div>
 
       {showScrollIndicator && (
-        <div className="absolute bottom-8 animate-bounce">
+        <motion.div 
+          className="absolute bottom-8"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        >
           <ArrowDown className="text-foreground/50" size={32} />
-        </div>
+        </motion.div>
       )}
 
       {/* Fade effect at bottom */}
