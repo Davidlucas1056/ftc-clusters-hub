@@ -13,7 +13,7 @@ import mentorWelligton from "@/assets/mentor-welligton.png";
 import mentorPaixao from "@/assets/mentor-paixao.png";
 import AnimatedSection from "@/components/AnimatedSection";
 import ParallaxImage from "@/components/ParallaxImage";
-import MagneticButton from "@/components/MagneticButton";
+
 
 interface TeamMember {
   name: string;
@@ -171,16 +171,14 @@ const NossaEquipe = () => {
               inovação e trabalho em equipe. Se você tem interesse em robótica 
               e quer fazer a diferença, entre em contato conosco!
             </p>
-            <MagneticButton>
-              <motion.a
-                href="mailto:clusters16053@gmail.com"
-                className="btn-primary inline-block"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Junte-se a Nós
-              </motion.a>
-            </MagneticButton>
+            <motion.a
+              href="mailto:clusters16053@gmail.com"
+              className="btn-primary inline-block"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Junte-se a Nós
+            </motion.a>
           </AnimatedSection>
         </div>
       </section>

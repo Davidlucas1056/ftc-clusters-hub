@@ -17,20 +17,7 @@ const HeroSection = ({ title, subtitle, showScrollIndicator = false }: HeroSecti
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {title.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              className="inline-block"
-              whileHover={{ 
-                scale: 1.2, 
-                color: "hsl(var(--primary))",
-                textShadow: "0 0 30px hsl(var(--primary))"
-              }}
-              transition={{ type: "spring", stiffness: 500 }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
+          {title}
         </motion.h1>
         {subtitle && (
           <motion.p 
