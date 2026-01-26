@@ -406,6 +406,7 @@ img {
   font-weight: bold;
   margin-bottom: 2rem;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -420,6 +421,7 @@ img {
   max-width: 48rem;
   margin: 0 auto;
   line-height: 1.8;
+  text-align: center;
 }
 
 .section-subtitle {
@@ -428,6 +430,25 @@ img {
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+/* Content Cards - Centralized */
+.content-wrapper {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.content-card {
+  text-align: center;
+}
+
+.content-card h2 {
+  text-align: center;
+}
+
+.content-card p {
+  text-align: center;
 }
 
 /* ========================================
@@ -621,6 +642,7 @@ img {
   border-radius: 1rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .value-card:hover {
@@ -630,17 +652,19 @@ img {
 .value-card .card-icon {
   width: 3rem;
   height: 3rem;
-  margin: 0 0 1rem 0;
+  margin: 0 auto 1rem auto;
 }
 
 .value-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .value-card p {
   color: var(--foreground-70);
   font-size: 0.875rem;
+  text-align: center;
 }
 
 /* ========================================
@@ -756,6 +780,13 @@ img {
 
 .timeline-content {
   flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .timeline-content {
+    text-align: left;
+  }
 }
 
 .timeline-year {
