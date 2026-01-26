@@ -1,42 +1,138 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clusters 16053 - Equipe de Robótica FTC</title>
+  <meta name="description" content="Somos a equipe 16053 Clusters, uma equipe de robótica da FIRST Tech Challenge apaixonada por inovação e tecnologia.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="public/favicon.ico">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-clusters.png" alt="Clusters 16053" class="logo-img">
+        <span>Clusters 16053</span>
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link active">Início</a>
+        <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+        <a href="nossa-historia.html" class="nav-link">Nossa História</a>
+        <a href="nossa-equipe.html" class="nav-link">Nossa Equipe</a>
+        <a href="nossos-projetos.html" class="nav-link">Nossos Projetos</a>
+        <a href="conquistas.html" class="nav-link">Conquistas</a>
+        <a href="patrocinio.html" class="nav-link btn-primary">Patrocínio</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title fade-in-scroll">Clusters 16053</h1>
+      <p class="hero-subtitle fade-in-scroll">Equipe de Robótica FTC</p>
+      <p class="hero-description fade-in-scroll">
+        Somos uma equipe apaixonada por robótica, inovação e tecnologia. 
+        Competimos na FIRST Tech Challenge, desenvolvendo robôs e habilidades para o futuro.
+      </p>
+      <div class="hero-buttons fade-in-scroll">
+        <a href="quem-somos.html" class="btn-primary">Conheça a Equipe</a>
+        <a href="patrocinio.html" class="btn-secondary">Apoie-nos</a>
+      </div>
+    </div>
+  </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+  <!-- Stats Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in-scroll">Nossos Números</h2>
+      <div class="stats-grid">
+        <div class="stat-card fade-in-scroll">
+          <span class="stat-number" data-target="7">0</span>
+          <span class="stat-label">Anos de História</span>
+        </div>
+        <div class="stat-card fade-in-scroll">
+          <span class="stat-number" data-target="5">0</span>
+          <span class="stat-label">Membros Ativos</span>
+        </div>
+        <div class="stat-card fade-in-scroll">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-label">Prêmios Conquistados</span>
+        </div>
+        <div class="stat-card fade-in-scroll">
+          <span class="stat-number" data-target="10">0</span>
+          <span class="stat-label">Competições</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <body>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // temporary browser history. This allows the SPA to route correctly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Team Preview -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title fade-in-scroll">Nossa Equipe</h2>
+      <p class="section-description fade-in-scroll">
+        Uma equipe diversa e talentosa, unida pela paixão por robótica e inovação.
+      </p>
+      <div class="team-preview fade-in-scroll">
+        <img src="assets/team-photo.jpeg" alt="Equipe Clusters 16053" class="team-photo">
+      </div>
+      <div class="text-center fade-in-scroll">
+        <a href="nossa-equipe.html" class="btn-primary">Conheça o Time</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title fade-in-scroll">Faça Parte da Nossa História</h2>
+      <p class="section-description fade-in-scroll">
+        Apoie a próxima geração de engenheiros e inovadores. 
+        Seu patrocínio faz a diferença!
+      </p>
+      <a href="patrocinio.html" class="btn-primary fade-in-scroll">Seja um Patrocinador</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Clusters 16053</h3>
+          <p>Equipe de robótica FTC apaixonada por inovação e tecnologia.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <a href="quem-somos.html">Quem Somos</a>
+          <a href="nossa-equipe.html">Nossa Equipe</a>
+          <a href="conquistas.html">Conquistas</a>
+          <a href="patrocinio.html">Patrocínio</a>
+        </div>
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p>Email: clusters16053@gmail.com</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/clusters_16053/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Clusters 16053. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
