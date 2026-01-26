@@ -1,5 +1,6 @@
 // ========================================
 // CLUSTERS 16053 - Main JavaScript
+// Simple interactivity only
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -54,6 +55,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const animatedElements = document.querySelectorAll('.fade-in-scroll');
   animatedElements.forEach(el => observer.observe(el));
   
+  // Counter animation for stats
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  
+  const counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.getAttribute('data-target'));
+        animateCounter(entry.target, target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  statNumbers.forEach(num => counterObserver.observe(num));
+  
+  function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(function() {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 30);
+  }
+  
   // Set active nav link based on current page
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const navLinksAll = document.querySelectorAll('.nav-link');
@@ -67,3 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Toggle name visibility on member cards (click to show)
+function toggleName(card) {
+  // Remove show-name from all other cards
+  const allCards = document.querySelectorAll('.member-card');
+  allCards.forEach(c => {
+    if (c !== card) {
+      c.classList.remove('show-name');
+    }
+  });
+  
+  // Toggle current card
+  card.classList.toggle('show-name');
+}
